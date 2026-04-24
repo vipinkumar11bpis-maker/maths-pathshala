@@ -1,113 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maths Pathshala</title>
+  <meta charset="UTF-8">
+  <title>Maths Pathshala</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    /* Dark Mode */
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
 
-<link rel="stylesheet" href="style.css">
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+      background: #333;
+      color: white;
+      border-radius: 5px;
+    }
+
+    /* Popup Styling */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: black;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      width: 300px;
+      z-index: 1000;
+    }
+
+    /* Dark popup */
+    .dark-mode .popup {
+      background: #222;
+      color: white;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- POPUP -->
-<div id="popup" class="popup">
-  <span class="close-btn" onclick="closePopup()">❌</span>
-  <h2>Welcome to Maths Pathshala</h2>
-  <p>Vipin Sir - Building Strong Foundation</p>
-</div>
+  <!-- Dark Mode Button -->
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content" data-aos="fade-up">
-        <h1>Maths Pathshala</h1>
-        <p>Building Strong Foundation in Mathematics</p>
-        <a href="#contact" class="btn">Join Now</a>
-    </div>
-</section>
+  <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
 
-<!-- ABOUT -->
-<section class="about">
-    <div class="container">
-        <img src="sir.jpg" class="profile" data-aos="fade-right">
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <span class="close-btn" onclick="closePopup()">❌</span>
+    
+    <h2>Maths Pathshala</h2>
+    <p><strong>Vipin Sir</strong></p>
+    <p>Building Strong Foundation in Mathematics</p>
+    <p>📍 Kalyanpur, Kanpur</p>
+    <p>🎓 300+ Students Taught</p>
+    <p>🏆 Many scored 90%+</p>
+  </div>
 
-        <div class="text" data-aos="fade-left">
-            <h2>About Teacher</h2>
-            <p>
-Vipin Kumar is a dedicated Mathematics educator with 4+ years of teaching experience, including professional work as an SME at Physics Wallah. He focuses on concept clarity and practical understanding rather than rote learning. His teaching approach helps students overcome fear of mathematics and build confidence. With over 300 students taught, many achieving 90%+, he ensures personal attention and consistent improvement.
-            </p>
-        </div>
-    </div>
-</section>
+  <!-- Main Content -->
+  <h1>Welcome to Maths Pathshala</h1>
+  <p>Best Coaching for Strong Mathematics Foundation</p>
 
-<!-- COURSES -->
-<section class="courses">
-<h2 data-aos="fade-up">Courses Offered</h2>
+  <script>
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
 
-<div class="cards">
-
-<div class="card" data-aos="zoom-in">
-<h3>Class 8–10</h3>
-<p>Science & Maths</p>
-<p>Concept clarity + weekly tests + doubt solving</p>
-</div>
-
-<div class="card" data-aos="zoom-in" data-aos-delay="200">
-<h3>Class 11–12</h3>
-<p>Mathematics</p>
-<p>Board-focused + deep problem solving</p>
-</div>
-
-</div>
-</section>
-
-<!-- WHY -->
-<section class="why">
-<h2 data-aos="fade-up">Why Choose Us</h2>
-
-<div class="cards">
-
-<div class="card">Concept-based learning</div>
-<div class="card">Personal attention</div>
-<div class="card">Weekly tests</div>
-<div class="card">Doubt solving</div>
-<div class="card">90%+ results</div>
-<div class="card">Experienced faculty</div>
-<div class="card">Small batch (max 10)</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-<h2 data-aos="fade-up">Contact</h2>
-
-<div class="contact-box" data-aos="fade-up">
-<p>📍 Kalyanpur, Kanpur</p>
-<p>📞 9506054813</p>
-<p>⏰ 4 PM – 8 PM</p>
-
-<a href="https://wa.me/919506054813" class="whatsapp">Chat on WhatsApp</a>
-</div>
-</section>
-
-<footer>
-<p>© Maths Pathshala</p>
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init();
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-</script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 
 </body>
 </html>
