@@ -15,8 +15,8 @@
 
 /* BODY */
 body{
-background:#0b0f19;
-color:white;
+background:#f5f7fb;
+color:#222;
 scroll-behavior:smooth;
 }
 
@@ -25,24 +25,25 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-background:#000;
+background:white;
 padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 z-index:1000;
 }
 
-nav h2{color:#00c6ff;}
+nav h2{color:#007bff;}
 
 nav a{
-color:white;
+color:#333;
 margin:0 10px;
 text-decoration:none;
 font-size:14px;
 }
 
-nav a:hover{color:#00c6ff;}
+nav a:hover{color:#007bff;}
 
 /* HERO */
 .hero{
@@ -52,19 +53,21 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:linear-gradient(135deg,#007bff,#00c6ff);
+color:white;
 }
 
 .hero h1{font-size:48px;}
-.hero p{opacity:0.8;margin:10px 0;}
+.hero p{margin:10px 0;}
 
 .btn{
 padding:10px 25px;
-background:#00c6ff;
-color:black;
+background:white;
+color:#007bff;
 border-radius:6px;
 text-decoration:none;
 margin-top:10px;
+font-weight:bold;
 }
 
 /* SECTION */
@@ -76,43 +79,47 @@ margin:auto;
 
 /* CARD */
 .card{
-background:#121826;
+background:white;
 padding:25px;
 margin:20px 0;
-border-radius:10px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-.card:hover{transform:translateY(-6px);}
+.card:hover{transform:translateY(-5px);}
 
 /* IMAGE */
 img{
 width:140px;
 height:140px;
 border-radius:50%;
+margin-bottom:10px;
 }
 
 /* LIST */
 ul{margin-left:20px;}
+ul li{margin-bottom:8px;}
 
 /* FORM */
 form input, form textarea{
 width:100%;
 padding:10px;
 margin:8px 0;
-border:none;
+border:1px solid #ccc;
 border-radius:5px;
 }
 
 form button{
 width:100%;
 padding:10px;
-background:#00c6ff;
+background:#007bff;
 border:none;
+color:white;
 border-radius:5px;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -131,7 +138,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.6);
 z-index:999;
 }
 
@@ -141,7 +148,6 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 background:white;
-color:black;
 padding:25px;
 border-radius:10px;
 width:300px;
@@ -157,7 +163,11 @@ cursor:pointer;
 }
 
 /* FOOTER */
-footer{text-align:center;padding:20px;opacity:0.7;}
+footer{
+text-align:center;
+padding:20px;
+opacity:0.7;
+}
 
 </style>
 </head>
@@ -186,8 +196,10 @@ footer{text-align:center;padding:20px;opacity:0.7;}
 <div class="card" style="text-align:center;">
 <img src="sir.jpg">
 <h2>Vipin Kumar</h2>
-<p>4+ Years Experience | Ex-SME Physics Wallah</p>
-<p>Dedicated educator focusing on concept clarity, personal attention and results. 300+ students taught with 90%+ results.</p>
+<p><b>4+ Years Experience | Ex-SME Physics Wallah</b></p>
+<p>
+Vipin Kumar is a passionate Mathematics educator who focuses on concept clarity and practical understanding rather than rote learning. With experience of teaching 300+ students and delivering 90%+ results, he ensures personal attention, doubt solving, and continuous improvement.
+</p>
 </div>
 </section>
 
@@ -195,8 +207,8 @@ footer{text-align:center;padding:20px;opacity:0.7;}
 <section id="courses">
 <div class="card">
 <h2>Courses</h2>
-<p>Class 8–10: Science & Maths</p>
-<p>Class 11–12: Mathematics</p>
+<p><b>Class 8–10:</b> Science & Maths (Foundation + Tests)</p>
+<p><b>Class 11–12:</b> Mathematics (Boards + Problem Solving)</p>
 </div>
 </section>
 
@@ -205,11 +217,12 @@ footer{text-align:center;padding:20px;opacity:0.7;}
 <div class="card">
 <h2>Why Choose Us</h2>
 <ul>
-<li>Concept learning</li>
+<li>Concept-based learning</li>
 <li>Personal attention</li>
 <li>Weekly tests</li>
 <li>Doubt solving</li>
-<li>Small batch</li>
+<li>Small batch (max 10 students)</li>
+<li>90%+ results</li>
 </ul>
 </div>
 </section>
@@ -219,18 +232,29 @@ footer{text-align:center;padding:20px;opacity:0.7;}
 <div class="card">
 <h2>Admission Form</h2>
 
-<form>
-<input type="text" placeholder="Student Name" required>
-<input type="number" placeholder="Phone Number" required>
-<input type="text" placeholder="Class">
-<textarea placeholder="Message"></textarea>
-<button>Submit</button>
+<form onsubmit="sendToWhatsApp(); return false;">
+<input type="text" id="name" placeholder="Student Name" required>
+<input type="text" id="phone" placeholder="Phone Number" required>
+<input type="text" id="class" placeholder="Class">
+<textarea id="msg" placeholder="Message"></textarea>
+<button type="submit">Submit</button>
 </form>
 
 </div>
 </section>
 
-<!-- WHATSAPP -->
+<!-- MAP -->
+<section>
+<div class="card">
+<h2>Location</h2>
+<iframe 
+src="https://maps.google.com/maps?q=Kalyanpur%20Kanpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="250" style="border:0;">
+</iframe>
+</div>
+</section>
+
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/919506054813" class="whatsapp">Chat</a>
 
 <!-- POPUP -->
@@ -247,10 +271,28 @@ footer{text-align:center;padding:20px;opacity:0.7;}
 </footer>
 
 <script>
+
 function closePopup(){
 document.getElementById("popup").style.display="none";
 document.getElementById("overlay").style.display="none";
 }
+
+/* WhatsApp Form */
+function sendToWhatsApp(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let cls=document.getElementById("class").value;
+let msg=document.getElementById("msg").value;
+
+let url="https://wa.me/919506054813?text="
++ "Name: "+name+"%0a"
++ "Phone: "+phone+"%0a"
++ "Class: "+cls+"%0a"
++ "Message: "+msg;
+
+window.open(url,'_blank');
+}
+
 </script>
 
 </body>
