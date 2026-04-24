@@ -8,100 +8,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-background:#f5f9ff;
-color:#111;
-}
+body{background:#f4f8ff;color:#111;}
 
-/* NAVBAR */
+/* NAV */
 nav{
 display:flex;
 justify-content:space-between;
-padding:20px 50px;
+padding:20px 40px;
 background:white;
 box-shadow:0 5px 15px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:1000;
+position:sticky;top:0;
 }
 
-nav h1{
-color:#0a58ca;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
+nav h1{color:#0a58ca;}
+nav a{margin-left:20px;text-decoration:none;color:#333;}
 
 /* HERO */
 .hero{
-height:90vh;
 display:flex;
-align-items:center;
 justify-content:space-around;
-padding:40px;
+align-items:center;
+padding:60px;
 }
 
 .hero img{
-width:300px;
+width:280px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
-animation:float 3s ease-in-out infinite;
+animation:float 3s infinite;
 }
 
 @keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
 }
 
-.hero-text{
-max-width:500px;
-}
-
-.hero-text h1{
-font-size:42px;
-color:#0a58ca;
-}
-
-.hero-text p{
-margin:15px 0;
-}
-
+.hero-text h1{font-size:40px;color:#0a58ca;}
 .btn{
-background:#0a58ca;
-color:white;
-padding:12px 25px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#003f9e;
+background:#0a58ca;color:white;
+padding:12px 25px;border:none;
+border-radius:8px;cursor:pointer;
 }
 
 /* SECTION */
-.section{
-padding:60px 50px;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:30px;
-color:#0a58ca;
-}
+.section{padding:60px 40px;}
+.section h2{text-align:center;color:#0a58ca;margin-bottom:30px;}
 
 /* CARDS */
 .cards{
@@ -114,38 +66,45 @@ justify-content:center;
 .card{
 background:white;
 padding:20px;
-border-radius:15px;
 width:300px;
+border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
+.card:hover{transform:translateY(-10px);}
+
+/* CLASS BOX */
+.class-box{
+background:white;
+margin:20px auto;
+padding:25px;
+max-width:900px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.class-box h3{color:#0a58ca;}
+.highlight{
+color:#d63384;
+font-weight:bold;
 }
 
 /* FORM */
 form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:10px;
+max-width:500px;margin:auto;
+display:flex;flex-direction:column;gap:10px;
 }
 
 input,select,textarea{
-padding:10px;
-border-radius:8px;
-border:1px solid #ccc;
+padding:10px;border-radius:8px;border:1px solid #ccc;
 }
 
 /* POPUP */
 .popup{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 background:rgba(0,0,0,0.6);
 display:flex;
 justify-content:center;
@@ -153,19 +112,25 @@ align-items:center;
 }
 
 .popup-box{
-background:white;
-padding:30px;
-border-radius:10px;
-text-align:center;
+background:white;padding:30px;border-radius:10px;text-align:center;
 position:relative;
 }
 
 .close{
-position:absolute;
-top:10px;
-right:15px;
-cursor:pointer;
+position:absolute;top:10px;right:15px;cursor:pointer;font-size:20px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
 font-size:20px;
+text-decoration:none;
 }
 </style>
 </head>
@@ -177,7 +142,7 @@ font-size:20px;
 <div class="popup-box">
 <span class="close" onclick="closePopup()">✖</span>
 <h2>🔥 Admission Open</h2>
-<p>Limited Seats Only! One Batch Per Class</p>
+<p>Limited Seats Only (Max 10 Students per Batch)</p>
 <button class="btn">Apply Now</button>
 </div>
 </div>
@@ -187,8 +152,7 @@ font-size:20px;
 <h1>Maths Pathshala</h1>
 <div>
 <a href="#">Home</a>
-<a href="#courses">Courses</a>
-<a href="#about">About</a>
+<a href="#classes">Classes</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -198,38 +162,40 @@ font-size:20px;
 <div class="hero-text">
 <h1>Vipin Kumar</h1>
 <p>Building Strong Foundation in Mathematics</p>
-<p>4+ Years Experience | 300+ Students | 90%+ Results</p>
+<p>4+ Years | 300+ Students | 90%+ Results</p>
 <button class="btn">Join Now</button>
 </div>
-
-<img src="sir.jpg" alt="Teacher">
+<img src="sir.jpg">
 </section>
 
 <!-- ABOUT -->
-<section class="section" id="about">
+<section class="section">
 <h2>About</h2>
 <p style="max-width:800px;margin:auto;text-align:center;">
-Vipin Kumar is a dedicated Mathematics educator with over 4 years of teaching experience, including professional work as an SME at Physics Wallah. His teaching focuses on deep conceptual clarity and practical understanding rather than rote learning. He has successfully taught more than 300 students, many of whom scored above 90%. His structured teaching approach helps students eliminate fear of mathematics and build strong problem-solving skills.
+Vipin Kumar is a passionate Mathematics educator with 4+ years of experience, including work as SME at Physics Wallah. His teaching method focuses on concept clarity, step-by-step explanation, and regular practice. Students not only improve marks but also gain confidence in solving problems independently.
 </p>
 </section>
 
-<!-- COURSES -->
-<section class="section" id="courses">
-<h2>Courses</h2>
+<!-- CLASSES -->
+<section class="section" id="classes">
+<h2>Classes & Courses</h2>
 
-<div class="cards">
-<div class="card">
-<h3>Class 8–10</h3>
-<p>Science & Maths</p>
-<p>Concept clarity, tests, doubt solving</p>
+<div class="class-box">
+<h3>Class 8–10 (Science + Maths)</h3>
+<p>✔ Strong foundation building</p>
+<p>✔ Weekly tests & doubt solving</p>
+<p>✔ NCERT + extra questions</p>
+<p class="highlight">Batch Size: Max 10 Students</p>
 </div>
 
-<div class="card">
-<h3>Class 11–12</h3>
-<p>Mathematics</p>
-<p>Board focused + advanced problems</p>
+<div class="class-box">
+<h3>Class 11–12 (Mathematics)</h3>
+<p>✔ Board focused preparation</p>
+<p>✔ Advanced problem solving</p>
+<p>✔ Chapter-wise tests</p>
+<p class="highlight">Batch Size: Max 10 Students</p>
 </div>
-</div>
+
 </section>
 
 <!-- WHY -->
@@ -269,6 +235,13 @@ Vipin Kumar is a dedicated Mathematics educator with over 4 years of teaching ex
 </form>
 </section>
 
+<!-- MAP -->
+<section class="section">
+<h2>Location</h2>
+<iframe src="https://maps.google.com/maps?q=kanpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300"></iframe>
+</section>
+
 <!-- CONTACT -->
 <section class="section">
 <h2>Contact</h2>
@@ -278,6 +251,9 @@ Vipin Kumar is a dedicated Mathematics educator with over 4 years of teaching ex
 🕒 4 PM – 8 PM (Mon-Sat)
 </p>
 </section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/919506054813" target="_blank">💬</a>
 
 <script>
 function closePopup(){
