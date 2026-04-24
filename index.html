@@ -1,294 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maths Pathshala</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f4f8ff;color:#111;}
-
-/* NAV */
-nav{
-display:flex;justify-content:space-between;
-padding:15px 40px;background:white;
-position:sticky;top:0;z-index:1000;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
-.logo{
-font-size:22px;
-font-weight:700;
-color:#0a58ca;
-}
-nav a{margin-left:20px;text-decoration:none;color:#333;}
-
-/* HERO */
-.hero{
-display:flex;justify-content:space-around;
-align-items:center;padding:60px;flex-wrap:wrap;
-}
-.hero img{
-width:260px;border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
-.btn{
-background:#0a58ca;color:white;
-padding:12px 20px;border:none;border-radius:8px;
-cursor:pointer;
-}
-
-/* SECTION */
-.section{padding:60px 40px;}
-.section h2{text-align:center;color:#0a58ca;margin-bottom:30px;}
-
-/* CLASS */
-.class-box{
-background:white;margin:20px auto;padding:25px;
-max-width:900px;border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-.highlight{color:#d63384;font-weight:bold;}
-
-/* CARDS */
-.cards{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
-.card{
-background:white;padding:20px;width:250px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* FORM */
-form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:10px;}
-input,select,textarea{padding:10px;border-radius:8px;border:1px solid #ccc;}
-
-/* GALLERY */
-.gallery{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.gallery img{width:200px;border-radius:10px;}
-
-/* POPUP */
-.popup{
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.6);
-display:flex;justify-content:center;align-items:center;
-}
-.popup-box{
-background:white;padding:25px;border-radius:10px;
-text-align:center;
-}
-.close{cursor:pointer;margin-top:10px;color:red;}
-
-/* FLOAT */
-.float-btn{
-position:fixed;bottom:80px;right:20px;
-background:#ff5722;color:white;
-padding:12px;border-radius:50px;text-decoration:none;
-}
-.whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;
-padding:12px;border-radius:50%;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPTech Solutions</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav>
-<div class="logo">Maths Pathshala</div>
-<div>
-<a href="#classes">Classes</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <h1>VP<span>Tech</span></h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
 <!-- HERO -->
 <section class="hero">
-<div>
-<h1>Vipin Kumar</h1>
-<p>Building Strong Foundation in Mathematics</p>
-<p>4+ Years | 300+ Students | 90%+ Results</p>
-<button class="btn">Join Now</button>
-</div>
-<img src="sir.jpg">
+    <h2>Build Your Future with VPTech</h2>
+    <p>We design fast, modern & professional websites for businesses and students.</p>
+    <button>Start Project</button>
 </section>
 
-<!-- CLASSES -->
-<section class="section" id="classes">
-<h2>Classes</h2>
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+        VPTech Solutions is focused on creating high-quality digital experiences.
+        We help students, startups, and businesses build strong online presence.
+    </p>
 
-<div class="class-box">
-<h3>Class 8–10 (Science + Maths)</h3>
-<p>✔ Concept clarity + NCERT focus</p>
-<p>✔ Weekly tests & doubt solving</p>
-<p class="highlight">Seats Left: 4</p>
-</div>
+    <div class="about-details">
+        <div>
+            <h3>🎯 Our Mission</h3>
+            <p>To deliver modern, fast and user-friendly websites.</p>
+        </div>
 
-<div class="class-box">
-<h3>Class 11–12 (Mathematics)</h3>
-<p>✔ Board + advanced prep</p>
-<p>✔ High-level problem solving</p>
-<p class="highlight">Seats Left: 3</p>
-</div>
+        <div>
+            <h3>🚀 Our Vision</h3>
+            <p>To become a trusted tech partner for digital growth.</p>
+        </div>
 
+        <div>
+            <h3>💡 Why Choose Us</h3>
+            <p>Clean UI, fast performance, affordable solutions.</p>
+        </div>
+    </div>
 </section>
 
-<!-- TOPPERS -->
-<section class="section">
-<h2>Top Results</h2>
-<div class="cards">
-<div class="card">Rohit – 95%</div>
-<div class="card">Anjali – 92%</div>
-<div class="card">Aman – 90%</div>
-</div>
+<!-- SERVICES -->
+<section class="services" id="services">
+    <h2>Our Services</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>🌐 Web Design</h3>
+            <p>Modern UI/UX with responsive layouts.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Web Development</h3>
+            <p>Fast, optimized and scalable websites.</p>
+        </div>
+
+        <div class="card">
+            <h3>📱 Responsive Design</h3>
+            <p>Mobile-friendly designs for all devices.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛠 Maintenance</h3>
+            <p>Regular updates and bug fixing support.</p>
+        </div>
+    </div>
 </section>
 
-<!-- FEATURES -->
-<section class="section">
-<h2>Why Choose Us</h2>
-<div class="cards">
-<div class="card">Small Batch (10 Students)</div>
-<div class="card">Personal Attention</div>
-<div class="card">Weekly Tests</div>
-<div class="card">Doubt Solving</div>
-</div>
+<!-- PROJECTS -->
+<section class="projects">
+    <h2>Our Work</h2>
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Clean personal portfolio for students.</p>
+        </div>
+
+        <div class="card">
+            <h3>Business Website</h3>
+            <p>Professional site for small businesses.</p>
+        </div>
+
+        <div class="card">
+            <h3>Landing Page</h3>
+            <p>High converting landing pages.</p>
+        </div>
+
+    </div>
 </section>
 
-<!-- GALLERY -->
-<section class="section">
-<h2>Gallery</h2>
-<div class="gallery">
-<img src="sir.jpg">
-<img src="sir.jpg">
-<img src="sir.jpg">
-</div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+        <p>Email: vptech@email.com</p>
+        <p>Phone: +91 9876543210</p>
+    </div>
 </section>
 
-<!-- FORM -->
-<section class="section" id="contact">
-<h2>Admission Form</h2>
-
-<form onsubmit="sendWhatsApp(event)">
-<input id="name" type="text" placeholder="Name" required>
-<input id="phone" type="text" placeholder="Phone" required>
-
-<select id="class">
-<option>Select Class</option>
-<option>Class 8</option>
-<option>Class 9</option>
-<option>Class 10</option>
-<option>Class 11</option>
-<option>Class 12</option>
-</select>
-<section class="section" id="classes">
-<h2>Our Courses</h2>
-
-<div class="cards">
-
-<!-- CLASS 8-10 -->
-<div class="card">
-<h3>Class 8–10</h3>
-<p><b>Subjects:</b> Science + Maths</p>
-<p>✔ Strong Foundation Building</p>
-<p>✔ NCERT + Extra Questions</p>
-<p>✔ Weekly Tests + Doubt Solving</p>
-<p class="highlight">Batch Size: Max 10 Students</p>
-<p class="highlight">Seats Left: 4</p>
-</div>
-
-<!-- CLASS 11-12 -->
-<div class="card">
-<h3>Class 11–12</h3>
-<p><b>Subject:</b> Mathematics</p>
-<p>✔ Board + Advanced Preparation</p>
-<p>✔ High Level Problem Solving</p>
-<p>✔ Chapter-wise Tests</p>
-<p class="highlight">Batch Size: Max 10 Students</p>
-<p class="highlight">Seats Left: 3</p>
-</div>
-
-<!-- ONLINE CLASS 10 -->
-<div class="card" style="border:2px solid #0a58ca;">
-<h3>Online Batch (Class 10)</h3>
-<p>✔ Live Online Classes</p>
-<p>✔ Board Focused Preparation</p>
-<p>✔ Recorded Backup Available</p>
-<p class="highlight">Limited Seats</p>
-</div>
-
-<!-- ONLINE CLASS 12 -->
-<div class="card" style="border:2px solid #0a58ca;">
-<h3>Online Batch (Class 12 Maths)</h3>
-<p>✔ Complete Board Coverage</p>
-<p>✔ Advanced Questions Practice</p>
-<p>✔ Doubt Solving Live</p>
-<p class="highlight">High Demand Batch</p>
-</div>
-
-</div>
-</section>
-<select id="paid">
-<option>Payment Done?</option>
-<option>Yes</option>
-<option>No</option>
-</select>
-
-<input type="file">
-
-<textarea id="msg" placeholder="Message"></textarea>
-
-<button class="btn">Submit</button>
-</form>
-
-<p style="text-align:center;margin-top:10px;">
-⚠️ Upload screenshot & also send on WhatsApp
-</p>
-
-</section>
-
-<!-- POPUP CONFIRM -->
-<div class="popup" id="popup" style="display:none;">
-<div class="popup-box">
-<h3>Form Submitted ✅</h3>
-<p>Check WhatsApp & send payment screenshot</p>
-<button onclick="closePopup()">OK</button>
-</div>
-</div>
-
-<!-- BUTTONS -->
-<a href="#contact" class="float-btn">Apply</a>
-<a href="https://wa.me/919506054813" class="whatsapp">💬</a>
-
-<script>
-function sendWhatsApp(e){
-e.preventDefault();
-
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let cls=document.getElementById("class").value;
-let paid=document.getElementById("paid").value;
-let msg=document.getElementById("msg").value;
-
-let url="https://wa.me/919506054813?text="
-+"Admission Request%0a"
-+"Name: "+name+"%0a"
-+"Phone: "+phone+"%0a"
-+"Class: "+cls+"%0a"
-+"Paid: "+paid+"%0a"
-+"Message: "+msg;
-
-window.open(url,'_blank');
-
-document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-</script>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 VPTech Solutions | Designed by Vipin</p>
+</footer>
 
 </body>
 </html>
