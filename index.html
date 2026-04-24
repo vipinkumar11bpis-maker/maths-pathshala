@@ -14,11 +14,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 /* BODY */
-body{
-background:#f5f7fb;
-color:#222;
-scroll-behavior:smooth;
-}
+body{background:#f5f7fb;color:#222;scroll-behavior:smooth;}
 
 /* NAVBAR */
 nav{
@@ -29,7 +25,6 @@ background:white;
 padding:15px 20px;
 display:flex;
 justify-content:space-between;
-align-items:center;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 z-index:1000;
 }
@@ -37,12 +32,10 @@ z-index:1000;
 nav h2{color:#007bff;}
 
 nav a{
-color:#333;
 margin:0 10px;
 text-decoration:none;
-font-size:14px;
+color:#333;
 }
-
 nav a:hover{color:#007bff;}
 
 /* HERO */
@@ -66,16 +59,11 @@ background:white;
 color:#007bff;
 border-radius:6px;
 text-decoration:none;
-margin-top:10px;
 font-weight:bold;
 }
 
 /* SECTION */
-section{
-padding:80px 20px;
-max-width:1000px;
-margin:auto;
-}
+section{padding:80px 20px;max-width:1000px;margin:auto;}
 
 /* CARD */
 .card{
@@ -84,25 +72,17 @@ padding:25px;
 margin:20px 0;
 border-radius:12px;
 box-shadow:0 8px 25px rgba(0,0,0,0.1);
-transition:0.3s;
 }
-
-.card:hover{transform:translateY(-5px);}
 
 /* IMAGE */
-img{
-width:140px;
-height:140px;
-border-radius:50%;
-margin-bottom:10px;
-}
+img{width:140px;height:140px;border-radius:50%;}
 
 /* LIST */
 ul{margin-left:20px;}
 ul li{margin-bottom:8px;}
 
 /* FORM */
-form input, form textarea{
+form input, form textarea, form select{
 width:100%;
 padding:10px;
 margin:8px 0;
@@ -114,8 +94,8 @@ form button{
 width:100%;
 padding:10px;
 background:#007bff;
-border:none;
 color:white;
+border:none;
 border-radius:5px;
 }
 
@@ -134,18 +114,13 @@ text-decoration:none;
 /* POPUP */
 .overlay{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-z-index:999;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.6);z-index:999;
 }
 
 .popup{
 position:fixed;
-top:50%;
-left:50%;
+top:50%;left:50%;
 transform:translate(-50%,-50%);
 background:white;
 padding:25px;
@@ -155,19 +130,9 @@ text-align:center;
 z-index:1000;
 }
 
-.close{
-position:absolute;
-top:10px;
-right:15px;
-cursor:pointer;
-}
+.close{position:absolute;top:10px;right:15px;cursor:pointer;}
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-opacity:0.7;
-}
+footer{text-align:center;padding:20px;}
 
 </style>
 </head>
@@ -197,19 +162,46 @@ opacity:0.7;
 <img src="sir.jpg">
 <h2>Vipin Kumar</h2>
 <p><b>4+ Years Experience | Ex-SME Physics Wallah</b></p>
+
 <p>
-Vipin Kumar is a passionate Mathematics educator who focuses on concept clarity and practical understanding rather than rote learning. With experience of teaching 300+ students and delivering 90%+ results, he ensures personal attention, doubt solving, and continuous improvement.
+Vipin Kumar is a dedicated Mathematics educator known for transforming weak students into confident achievers. With over 4 years of experience and professional expertise as an SME at Physics Wallah, he focuses on concept clarity, real-life problem solving, and continuous improvement.
 </p>
+
+<p>
+His teaching style ensures that students not only understand mathematics but also develop interest and confidence. With 300+ students taught and many scoring above 90%, Maths Pathshala is a trusted place for quality education.
+</p>
+
 </div>
 </section>
 
 <!-- COURSES -->
 <section id="courses">
+
 <div class="card">
-<h2>Courses</h2>
-<p><b>Class 8–10:</b> Science & Maths (Foundation + Tests)</p>
-<p><b>Class 11–12:</b> Mathematics (Boards + Problem Solving)</p>
+<h2>Class 8</h2>
+<p>Strong basics of maths & science, focus on NCERT + foundation.</p>
 </div>
+
+<div class="card">
+<h2>Class 9</h2>
+<p>Concept clarity, school + olympiad level preparation.</p>
+</div>
+
+<div class="card">
+<h2>Class 10</h2>
+<p>Board preparation, PYQs, regular test series, 90%+ target.</p>
+</div>
+
+<div class="card">
+<h2>Class 11</h2>
+<p>Core maths understanding, algebra + trigonometry mastery.</p>
+</div>
+
+<div class="card">
+<h2>Class 12</h2>
+<p>Board + competitive level preparation with problem solving.</p>
+</div>
+
 </section>
 
 <!-- WHY -->
@@ -220,9 +212,10 @@ Vipin Kumar is a passionate Mathematics educator who focuses on concept clarity 
 <li>Concept-based learning</li>
 <li>Personal attention</li>
 <li>Weekly tests</li>
-<li>Doubt solving</li>
-<li>Small batch (max 10 students)</li>
-<li>90%+ results</li>
+<li>Doubt solving sessions</li>
+<li>Small batch (max 10)</li>
+<li>Experienced faculty</li>
+<li>90%+ proven results</li>
 </ul>
 </div>
 </section>
@@ -235,8 +228,18 @@ Vipin Kumar is a passionate Mathematics educator who focuses on concept clarity 
 <form onsubmit="sendToWhatsApp(); return false;">
 <input type="text" id="name" placeholder="Student Name" required>
 <input type="text" id="phone" placeholder="Phone Number" required>
-<input type="text" id="class" placeholder="Class">
+
+<select id="class">
+<option>Select Class</option>
+<option>Class 8</option>
+<option>Class 9</option>
+<option>Class 10</option>
+<option>Class 11</option>
+<option>Class 12</option>
+</select>
+
 <textarea id="msg" placeholder="Message"></textarea>
+
 <button type="submit">Submit</button>
 </form>
 
@@ -247,14 +250,12 @@ Vipin Kumar is a passionate Mathematics educator who focuses on concept clarity 
 <section>
 <div class="card">
 <h2>Location</h2>
-<iframe 
-src="https://maps.google.com/maps?q=Kalyanpur%20Kanpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="250" style="border:0;">
-</iframe>
+<iframe src="https://maps.google.com/maps?q=Kalyanpur%20Kanpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="250"></iframe>
 </div>
 </section>
 
-<!-- WHATSAPP FLOAT -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/919506054813" class="whatsapp">Chat</a>
 
 <!-- POPUP -->
@@ -265,10 +266,7 @@ width="100%" height="250" style="border:0;">
 <p>Limited seats available</p>
 </div>
 
-<!-- FOOTER -->
-<footer>
-© Maths Pathshala 2026
-</footer>
+<footer>© Maths Pathshala 2026</footer>
 
 <script>
 
@@ -277,7 +275,6 @@ document.getElementById("popup").style.display="none";
 document.getElementById("overlay").style.display="none";
 }
 
-/* WhatsApp Form */
 function sendToWhatsApp(){
 let name=document.getElementById("name").value;
 let phone=document.getElementById("phone").value;
@@ -285,10 +282,10 @@ let cls=document.getElementById("class").value;
 let msg=document.getElementById("msg").value;
 
 let url="https://wa.me/919506054813?text="
-+ "Name: "+name+"%0a"
-+ "Phone: "+phone+"%0a"
-+ "Class: "+cls+"%0a"
-+ "Message: "+msg;
++"Name: "+name+"%0a"
++"Phone: "+phone+"%0a"
++"Class: "+cls+"%0a"
++"Message: "+msg;
 
 window.open(url,'_blank');
 }
