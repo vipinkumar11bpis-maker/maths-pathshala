@@ -11,88 +11,130 @@
 <style>
 
 /* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 /* BODY */
 body{
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:#0b0f19;
 color:white;
+scroll-behavior:smooth;
 }
 
-/* HEADER */
-header{
-padding:60px 20px;
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#000;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+nav h2{color:#00c6ff;}
+
+nav a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{color:#00c6ff;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
 
-header h1{
-font-size:42px;
-}
+.hero h1{font-size:48px;}
+.hero p{opacity:0.8;margin:10px 0;}
 
-header p{
-font-size:18px;
-opacity:0.8;
+.btn{
+padding:10px 25px;
+background:#00c6ff;
+color:black;
+border-radius:6px;
+text-decoration:none;
+margin-top:10px;
 }
 
 /* SECTION */
 section{
-padding:40px 20px;
+padding:80px 20px;
 max-width:1000px;
 margin:auto;
 }
 
 /* CARD */
 .card{
-background:rgba(255,255,255,0.05);
+background:#121826;
 padding:25px;
 margin:20px 0;
-border-radius:12px;
-backdrop-filter:blur(10px);
+border-radius:10px;
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
-}
+.card:hover{transform:translateY(-6px);}
 
 /* IMAGE */
 img{
 width:140px;
 height:140px;
 border-radius:50%;
-margin-bottom:15px;
-}
-
-/* TITLE */
-h2{
-margin-bottom:15px;
-color:#00c6ff;
 }
 
 /* LIST */
-ul{
-text-align:left;
-margin-left:20px;
+ul{margin-left:20px;}
+
+/* FORM */
+form input, form textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:none;
+border-radius:5px;
 }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:15px;
-padding:10px 20px;
+form button{
+width:100%;
+padding:10px;
 background:#00c6ff;
-color:black;
-border-radius:6px;
+border:none;
+border-radius:5px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:12px 18px;
+border-radius:50px;
+color:white;
 text-decoration:none;
-font-weight:bold;
 }
 
 /* POPUP */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+z-index:999;
+}
+
 .popup{
 position:fixed;
 top:50%;
@@ -105,22 +147,6 @@ border-radius:10px;
 width:300px;
 text-align:center;
 z-index:1000;
-animation:pop 0.5s ease;
-}
-
-@keyframes pop{
-from{opacity:0; transform:translate(-50%,-70%);}
-to{opacity:1; transform:translate(-50%,-50%);}
-}
-
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-z-index:999;
 }
 
 .close{
@@ -128,107 +154,96 @@ position:absolute;
 top:10px;
 right:15px;
 cursor:pointer;
-font-size:20px;
 }
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-opacity:0.7;
-}
+footer{text-align:center;padding:20px;opacity:0.7;}
 
 </style>
 </head>
 
 <body>
 
-<!-- POPUP -->
-<div class="overlay" id="overlay"></div>
-<div class="popup" id="popup">
-<span class="close" onclick="closePopup()">✖</span>
-<h3>🚀 Admission Open</h3>
-<p>Hurry! Limited seats (Only 1 batch per class)</p>
-<a href="tel:9506054813" class="btn">Call Now</a>
+<!-- NAVBAR -->
+<nav>
+<h2>Maths Pathshala</h2>
+<div>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#contact">Contact</a>
 </div>
+</nav>
 
-<!-- HEADER -->
-<header>
+<!-- HERO -->
+<div class="hero">
 <h1>Maths Pathshala</h1>
 <p>Building Strong Foundation in Mathematics</p>
-</header>
+<a href="#contact" class="btn">Join Now</a>
+</div>
 
 <!-- ABOUT -->
-<section>
+<section id="about">
 <div class="card" style="text-align:center;">
-<img src="sir.jpg" alt="Vipin Sir">
+<img src="sir.jpg">
 <h2>Vipin Kumar</h2>
-<p><b>4+ Years Experience (Ex-SME at Physics Wallah)</b></p>
-<p>
-Vipin Kumar is a passionate and result-oriented Mathematics educator with over 4 years of teaching experience, including professional work as a Subject Matter Expert at Physics Wallah. His teaching methodology is focused on deep conceptual clarity rather than rote learning, ensuring that students not only understand mathematics but also develop confidence in applying it.
-
-Having taught more than 300 students, many of whom have scored above 90%, he believes in personalized attention, regular assessment, and continuous improvement. His classes are designed to eliminate fear of mathematics and transform it into a scoring subject.
-</p>
+<p>4+ Years Experience | Ex-SME Physics Wallah</p>
+<p>Dedicated educator focusing on concept clarity, personal attention and results. 300+ students taught with 90%+ results.</p>
 </div>
 </section>
 
 <!-- COURSES -->
-<section>
+<section id="courses">
 <div class="card">
-<h2>Courses Offered</h2>
-<p><b>Class 8–10 (Science & Maths)</b><br>
-Strong foundation building with concept clarity, weekly tests, and doubt solving.</p>
-
-<p><b>Class 11–12 (Mathematics)</b><br>
-Board-focused preparation with deep understanding and problem-solving techniques.</p>
+<h2>Courses</h2>
+<p>Class 8–10: Science & Maths</p>
+<p>Class 11–12: Mathematics</p>
 </div>
 </section>
 
-<!-- WHY CHOOSE US -->
+<!-- WHY -->
 <section>
 <div class="card">
 <h2>Why Choose Us</h2>
 <ul>
-<li>Concept-based learning approach</li>
-<li>Personal attention to every student</li>
-<li>Weekly tests & performance tracking</li>
-<li>Regular doubt solving sessions</li>
-<li>Proven results (90%+)</li>
-<li>Experienced faculty</li>
-<li>Small batch size (max 10 students)</li>
+<li>Concept learning</li>
+<li>Personal attention</li>
+<li>Weekly tests</li>
+<li>Doubt solving</li>
+<li>Small batch</li>
 </ul>
 </div>
 </section>
 
-<!-- FEATURES -->
-<section>
+<!-- FORM -->
+<section id="contact">
 <div class="card">
-<h2>Features</h2>
-<ul>
-<li>Weekly Tests</li>
-<li>Doubt Solving</li>
-<li>Notes Provided</li>
-<li>Personal Attention</li>
-<li>Online Classes (10th & 12th)</li>
-<li>Offline Classes Available</li>
-<li>Small Batch System</li>
-</ul>
+<h2>Admission Form</h2>
+
+<form>
+<input type="text" placeholder="Student Name" required>
+<input type="number" placeholder="Phone Number" required>
+<input type="text" placeholder="Class">
+<textarea placeholder="Message"></textarea>
+<button>Submit</button>
+</form>
+
 </div>
 </section>
 
-<!-- CONTACT -->
-<section>
-<div class="card">
-<h2>Contact</h2>
-<p>📍 Kalyanpur, Kanpur</p>
-<p>📞 9506054813</p>
-<a href="https://wa.me/919506054813" class="btn">WhatsApp Now</a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/919506054813" class="whatsapp">Chat</a>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+<span class="close" onclick="closePopup()">✖</span>
+<h3>Admission Open 🚀</h3>
+<p>Limited seats available</p>
 </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
-© 2026 Maths Pathshala | All Rights Reserved
+© Maths Pathshala 2026
 </footer>
 
 <script>
