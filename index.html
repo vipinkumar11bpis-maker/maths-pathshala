@@ -3,233 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Maths Pathshala</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-/* BODY */
-body{background:#f5f7fb;color:#222;scroll-behavior:smooth;}
+body{
+background:#f5f9ff;
+color:#111;
+}
 
 /* NAVBAR */
 nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-padding:15px 20px;
 display:flex;
 justify-content:space-between;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+padding:20px 50px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
 z-index:1000;
 }
 
-nav h2{color:#007bff;}
+nav h1{
+color:#0a58ca;
+}
 
 nav a{
-margin:0 10px;
+margin-left:20px;
 text-decoration:none;
 color:#333;
+font-weight:500;
 }
-nav a:hover{color:#007bff;}
 
 /* HERO */
 .hero{
-height:100vh;
+height:90vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#007bff,#00c6ff);
-color:white;
+justify-content:space-around;
+padding:40px;
 }
 
-.hero h1{font-size:48px;}
-.hero p{margin:10px 0;}
+.hero img{
+width:300px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h1{
+font-size:42px;
+color:#0a58ca;
+}
+
+.hero-text p{
+margin:15px 0;
+}
 
 .btn{
-padding:10px 25px;
-background:white;
-color:#007bff;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
+background:#0a58ca;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#003f9e;
 }
 
 /* SECTION */
-section{padding:80px 20px;max-width:1000px;margin:auto;}
+.section{
+padding:60px 50px;
+}
 
-/* CARD */
+.section h2{
+text-align:center;
+margin-bottom:30px;
+color:#0a58ca;
+}
+
+/* CARDS */
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
 .card{
 background:white;
-padding:25px;
-margin:20px 0;
-border-radius:12px;
-box-shadow:0 8px 25px rgba(0,0,0,0.1);
+padding:20px;
+border-radius:15px;
+width:300px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
-/* IMAGE */
-img{width:140px;height:140px;border-radius:50%;}
-
-/* LIST */
-ul{margin-left:20px;}
-ul li{margin-bottom:8px;}
+.card:hover{
+transform:translateY(-10px);
+}
 
 /* FORM */
-form input, form textarea, form select{
-width:100%;
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input,select,textarea{
 padding:10px;
-margin:8px 0;
+border-radius:8px;
 border:1px solid #ccc;
-border-radius:5px;
-}
-
-form button{
-width:100%;
-padding:10px;
-background:#007bff;
-color:white;
-border:none;
-border-radius:5px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:12px 18px;
-border-radius:50px;
-color:white;
-text-decoration:none;
 }
 
 /* POPUP */
-.overlay{
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.6);z-index:999;
-}
-
 .popup{
 position:fixed;
-top:50%;left:50%;
-transform:translate(-50%,-50%);
-background:white;
-padding:25px;
-border-radius:10px;
-width:300px;
-text-align:center;
-z-index:1000;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
-.close{position:absolute;top:10px;right:15px;cursor:pointer;}
+.popup-box{
+background:white;
+padding:30px;
+border-radius:10px;
+text-align:center;
+position:relative;
+}
 
-footer{text-align:center;padding:20px;}
-
+.close{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+font-size:20px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-box">
+<span class="close" onclick="closePopup()">✖</span>
+<h2>🔥 Admission Open</h2>
+<p>Limited Seats Only! One Batch Per Class</p>
+<button class="btn">Apply Now</button>
+</div>
+</div>
+
+<!-- NAV -->
 <nav>
-<h2>Maths Pathshala</h2>
+<h1>Maths Pathshala</h1>
 <div>
-<a href="#about">About</a>
+<a href="#">Home</a>
 <a href="#courses">Courses</a>
+<a href="#about">About</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-<h1>Maths Pathshala</h1>
+<section class="hero">
+<div class="hero-text">
+<h1>Vipin Kumar</h1>
 <p>Building Strong Foundation in Mathematics</p>
-<a href="#contact" class="btn">Join Now</a>
+<p>4+ Years Experience | 300+ Students | 90%+ Results</p>
+<button class="btn">Join Now</button>
 </div>
+
+<img src="sir.jpg" alt="Teacher">
+</section>
 
 <!-- ABOUT -->
-<section id="about">
-<div class="card" style="text-align:center;">
-<img src="sir.jpg">
-<h2>Vipin Kumar</h2>
-<p><b>4+ Years Experience | Ex-SME Physics Wallah</b></p>
-
-<p>
-Vipin Kumar is a dedicated Mathematics educator known for transforming weak students into confident achievers. With over 4 years of experience and professional expertise as an SME at Physics Wallah, he focuses on concept clarity, real-life problem solving, and continuous improvement.
+<section class="section" id="about">
+<h2>About</h2>
+<p style="max-width:800px;margin:auto;text-align:center;">
+Vipin Kumar is a dedicated Mathematics educator with over 4 years of teaching experience, including professional work as an SME at Physics Wallah. His teaching focuses on deep conceptual clarity and practical understanding rather than rote learning. He has successfully taught more than 300 students, many of whom scored above 90%. His structured teaching approach helps students eliminate fear of mathematics and build strong problem-solving skills.
 </p>
-
-<p>
-His teaching style ensures that students not only understand mathematics but also develop interest and confidence. With 300+ students taught and many scoring above 90%, Maths Pathshala is a trusted place for quality education.
-</p>
-
-</div>
 </section>
 
 <!-- COURSES -->
-<section id="courses">
+<section class="section" id="courses">
+<h2>Courses</h2>
 
+<div class="cards">
 <div class="card">
-<h2>Class 8</h2>
-<p>Strong basics of maths & science, focus on NCERT + foundation.</p>
+<h3>Class 8–10</h3>
+<p>Science & Maths</p>
+<p>Concept clarity, tests, doubt solving</p>
 </div>
 
 <div class="card">
-<h2>Class 9</h2>
-<p>Concept clarity, school + olympiad level preparation.</p>
+<h3>Class 11–12</h3>
+<p>Mathematics</p>
+<p>Board focused + advanced problems</p>
 </div>
-
-<div class="card">
-<h2>Class 10</h2>
-<p>Board preparation, PYQs, regular test series, 90%+ target.</p>
 </div>
-
-<div class="card">
-<h2>Class 11</h2>
-<p>Core maths understanding, algebra + trigonometry mastery.</p>
-</div>
-
-<div class="card">
-<h2>Class 12</h2>
-<p>Board + competitive level preparation with problem solving.</p>
-</div>
-
 </section>
 
 <!-- WHY -->
-<section>
-<div class="card">
+<section class="section">
 <h2>Why Choose Us</h2>
-<ul>
-<li>Concept-based learning</li>
-<li>Personal attention</li>
-<li>Weekly tests</li>
-<li>Doubt solving sessions</li>
-<li>Small batch (max 10)</li>
-<li>Experienced faculty</li>
-<li>90%+ proven results</li>
-</ul>
+
+<div class="cards">
+<div class="card">Concept Based Learning</div>
+<div class="card">Personal Attention</div>
+<div class="card">Weekly Tests</div>
+<div class="card">Doubt Solving</div>
+<div class="card">90%+ Results</div>
+<div class="card">Small Batch (10 Students)</div>
 </div>
 </section>
 
 <!-- FORM -->
-<section id="contact">
-<div class="card">
+<section class="section" id="contact">
 <h2>Admission Form</h2>
 
-<form onsubmit="sendToWhatsApp(); return false;">
-<input type="text" id="name" placeholder="Student Name" required>
-<input type="text" id="phone" placeholder="Phone Number" required>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Phone Number">
 
-<select id="class">
+<select>
 <option>Select Class</option>
 <option>Class 8</option>
 <option>Class 9</option>
@@ -238,58 +263,26 @@ His teaching style ensures that students not only understand mathematics but als
 <option>Class 12</option>
 </select>
 
-<textarea id="msg" placeholder="Message"></textarea>
+<textarea placeholder="Message"></textarea>
 
-<button type="submit">Submit</button>
+<button class="btn">Submit</button>
 </form>
-
-</div>
 </section>
 
-<!-- MAP -->
-<section>
-<div class="card">
-<h2>Location</h2>
-<iframe src="https://maps.google.com/maps?q=Kalyanpur%20Kanpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="250"></iframe>
-</div>
+<!-- CONTACT -->
+<section class="section">
+<h2>Contact</h2>
+<p style="text-align:center;">
+📞 9506054813 <br>
+📍 Kalyanpur, Kanpur <br>
+🕒 4 PM – 8 PM (Mon-Sat)
+</p>
 </section>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/919506054813" class="whatsapp">Chat</a>
-
-<!-- POPUP -->
-<div class="overlay" id="overlay"></div>
-<div class="popup" id="popup">
-<span class="close" onclick="closePopup()">✖</span>
-<h3>Admission Open 🚀</h3>
-<p>Limited seats available</p>
-</div>
-
-<footer>© Maths Pathshala 2026</footer>
 
 <script>
-
 function closePopup(){
 document.getElementById("popup").style.display="none";
-document.getElementById("overlay").style.display="none";
 }
-
-function sendToWhatsApp(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let cls=document.getElementById("class").value;
-let msg=document.getElementById("msg").value;
-
-let url="https://wa.me/919506054813?text="
-+"Name: "+name+"%0a"
-+"Phone: "+phone+"%0a"
-+"Class: "+cls+"%0a"
-+"Message: "+msg;
-
-window.open(url,'_blank');
-}
-
 </script>
 
 </body>
