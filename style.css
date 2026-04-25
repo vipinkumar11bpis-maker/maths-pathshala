@@ -261,3 +261,16 @@ td, th {
         gap: 10px;
     }
 }
+.trust-badges {
+    margin-top: 20px;
+}
+
+.trust-badges span {
+    background: white;
+    padding: 8px 15px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
