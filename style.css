@@ -274,3 +274,15 @@ td, th {
     font-size: 14px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+.why-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 15px;
+}
+
+.why-box div {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
