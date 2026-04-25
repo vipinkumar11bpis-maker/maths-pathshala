@@ -101,3 +101,27 @@ button {
     font-size: 30px;
     text-decoration: none;
 }
+.big {
+width: 280px;
+}
+
+.card ul {
+text-align: left;
+}
+
+table {
+margin: auto;
+border-collapse: collapse;
+width: 70%;
+}
+
+td, th {
+border: 1px solid #ddd;
+padding: 10px;
+}
+
+.founder {
+width: 200px;
+border-radius: 50%;
+margin-bottom: 20px;
+}
