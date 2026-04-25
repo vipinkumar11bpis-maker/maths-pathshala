@@ -219,3 +219,33 @@ opacity: 1;
 transform: translateY(0);
 }
 }
+/* 🔥 Schedule Premium Grid */
+
+.schedule-table {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin-top: 30px;
+}
+
+.day {
+padding: 20px;
+border-radius: 15px;
+color: white;
+transition: 0.3s;
+box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.day:hover {
+transform: translateY(-5px) scale(1.03);
+}
+
+/* 🎨 Different Colors */
+
+.mon { background: linear-gradient(45deg, #4facfe, #00f2fe); }
+.tue { background: linear-gradient(45deg, #43e97b, #38f9d7); }
+.wed { background: linear-gradient(45deg, #fa709a, #fee140); }
+.thu { background: linear-gradient(45deg, #a18cd1, #fbc2eb); }
+.fri { background: linear-gradient(45deg, #ff9a9e, #fad0c4); }
+.sat { background: linear-gradient(45deg, #f6d365, #fda085); }
+.sun { background: linear-gradient(45deg, #7f7fd5, #86a8e7); text-align:center; }
