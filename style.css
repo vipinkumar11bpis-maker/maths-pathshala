@@ -184,3 +184,87 @@ color:white;
     font-size:13px;
     padding:6px 12px;
 }
+/* 🔥 GLASS EFFECT UPGRADE */
+.section{
+    padding:90px 20px;
+}
+
+/* HERO GRADIENT */
+.hero{
+    background: linear-gradient(135deg,#e3f2ff,#ffffff);
+}
+
+/* BUTTON PREMIUM */
+.btn{
+    background: linear-gradient(45deg,#0a3d91,#1e90ff);
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+/* CARD PREMIUM */
+.card{
+    border-radius:18px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* POPUP PREMIUM */
+.popup{
+    backdrop-filter: blur(8px);
+}
+
+.popup-content{
+    width:360px;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+    animation: popSmooth 0.4s ease;
+}
+
+@keyframes popSmooth{
+    from{
+        transform:scale(0.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* INPUT PREMIUM */
+.popup-content input{
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+/* TRUST BADGE */
+.trust-badges span{
+    font-size:13px;
+    padding:7px 14px;
+}
+
+/* COUNTER CARD */
+.counter-box{
+    background:linear-gradient(135deg,#ffffff,#f1f7ff);
+    border-radius:15px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+    font-size:24px;
+    padding:18px;
+}
+
+/* FOUNDER CARD */
+.founder-card{
+    border-radius:20px;
+    padding:40px;
+}
