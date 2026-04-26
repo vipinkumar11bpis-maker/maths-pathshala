@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard - Maths Pathshala</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat', sans-serif;
+}
+
+body{
+    background:#f5f8ff;
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    background:linear-gradient(180deg,#0d47a1,#1565c0);
+    color:white;
+    height:100vh;
+    position:fixed;
+    padding:20px;
+}
+
+.sidebar h2{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    margin:5px 0;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* MAIN */
+.main{
+    margin-left:250px;
+    width:100%;
+    padding:20px;
+}
+
+/* TOP BAR */
+.topbar{
+    background:white;
+    padding:15px 20px;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.topbar h3{
+    color:#0d47a1;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.06);
+}
+
+.card h2{
+    color:#1976d2;
+}
+
+/* COURSES */
+.section{
+    margin-top:30px;
+}
+
+.section h3{
+    margin-bottom:15px;
+    color:#0d47a1;
+}
+
+.courses{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.course-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.06);
+}
+
+.course-card h4{
+    color:#0d47a1;
+}
+
+.progress{
+    height:8px;
+    background:#e0e0e0;
+    border-radius:20px;
+    margin:10px 0;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background:#1976d2;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:8px 12px;
+    background:#1976d2;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:13px;
+}
+
+/* LIVE CLASS BOX */
+.live{
+    background:linear-gradient(90deg,#ff5252,#ff1744);
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+    .sidebar{
+        display:none;
+    }
+    .main{
+        margin-left:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>📘 Maths Pathshala</h2>
+
+<a href="#">🏠 Dashboard</a>
+<a href="#">📚 My Courses</a>
+<a href="#">📝 Tests</a>
+<a href="#">📊 Progress</a>
+<a href="#">🎥 Lectures</a>
+<a href="#">💬 Doubts</a>
+<a href="index.html">⬅ Back to Site</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- TOP -->
+<div class="topbar">
+<h3>Student Dashboard</h3>
+<p>Welcome Back 👋</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+
+<div class="card">
+<h2>3</h2>
+<p>Enrolled Courses</p>
+</div>
+
+<div class="card">
+<h2>68%</h2>
+<p>Overall Progress</p>
+</div>
+
+<div class="card">
+<h2>12</h2>
+<p>Tests Completed</p>
+</div>
+
+<div class="card">
+<h2>5</h2>
+<p>Doubts Solved</p>
+</div>
+
+</div>
+
+<!-- LIVE CLASS -->
+<div class="live">
+<h3>🔥 Live Class Today</h3>
+<p>Class 10 Maths - 6:00 PM</p>
+</div>
+
+<!-- COURSES -->
+<div class="section">
+<h3>📚 My Courses</h3>
+
+<div class="courses">
+
+<div class="course-card">
+<h4>Foundation Maths (Class 9-10)</h4>
+
+<div class="progress">
+<div class="progress-bar" style="width:70%"></div>
+</div>
+
+<p>70% Completed</p>
+<a href="#" class="btn">Continue</a>
+</div>
+
+<div class="course-card">
+<h4>Boards Booster (Class 11-12)</h4>
+
+<div class="progress">
+<div class="progress-bar" style="width:45%"></div>
+</div>
+
+<p>45% Completed</p>
+<a href="#" class="btn">Continue</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
