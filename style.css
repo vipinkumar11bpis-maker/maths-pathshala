@@ -1,270 +1,204 @@
-body{
+*{
 margin:0;
-font-family:Montserrat;
-background:#f5f9ff;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background: linear-gradient(135deg,#e3f2fd,#ffffff);
+color:#333;
 }
 
 /* NAVBAR */
 .navbar{
 display:flex;
 justify-content:space-between;
-padding:15px 30px;
-background:white;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
+align-items:center;
+padding:15px 50px;
+background: linear-gradient(90deg,#0d47a1,#1976d2);
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
 .navbar a{
-margin:0 10px;
+color:white;
 text-decoration:none;
-color:#333;
+margin:0 15px;
+font-weight:500;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#ffeb3b;
 }
 
 /* HERO */
 .hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:100px 20px;
+background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1581090700227-1e8a9c1f5c36');
+background-size:cover;
+color:white;
 }
 
 .hero h1{
-color:#0a3d91;
+font-size:48px;
+margin-bottom:15px;
 }
 
-/* BUTTON */
+.hero p{
+font-size:20px;
+margin-bottom:25px;
+}
+
 .btn{
-padding:10px 20px;
-background:#0a3d91;
+padding:12px 25px;
+background:#ff9800;
 color:white;
-border-radius:20px;
-text-decoration:none;
-display:inline-block;
-margin:10px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
 }
 
-/* COUNTER */
-.counter-section{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:30px;
+.btn:hover{
+background:#e65100;
+transform:scale(1.05);
 }
 
-.counter-box{
-background:white;
-padding:20px;
-border-radius:10px;
+/* SECTION */
+.section{
+padding:60px 40px;
+text-align:center;
+}
+
+.section h2{
+font-size:32px;
+margin-bottom:20px;
+color:#0d47a1;
 }
 
 /* CARDS */
 .cards{
 display:flex;
+flex-wrap:wrap;
 justify-content:center;
-gap:20px;
+gap:25px;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
+padding:25px;
+width:260px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
-/* FOUNDER */
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 12px 35px rgba(0,0,0,0.2);
+}
+
+.card h3{
+margin-bottom:10px;
+color:#1976d2;
+}
+
+/* BIG CARD (BOOKS) */
+.card.big{
+width:280px;
+}
+
+/* BOOK BUTTONS */
+.book-btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+background:#1976d2;
+color:white;
+border-radius:20px;
+text-decoration:none;
+font-size:14px;
+}
+
+.book-btn.download{
+background:#43a047;
+}
+
+.book-btn:hover{
+opacity:0.8;
+}
+
+/* COUNTER */
+.counter{
+font-size:35px;
+font-weight:bold;
+color:#ff5722;
+}
+
+/* FOUNDER IMAGE */
 .founder-img{
-width:100px;
+width:180px;
+height:180px;
 border-radius:50%;
-display:block;
-margin:auto;
+object-fit:cover;
+margin-bottom:15px;
+border:4px solid #1976d2;
 }
 
-/* POPUP */
+/* FOOTER */
+.footer{
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+/* POPUP FORM */
 .popup{
+display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.7);
-display:none;
+background:rgba(0,0,0,0.6);
 justify-content:center;
 align-items:center;
+z-index:2000;
 }
 
 .popup-content{
 background:white;
-padding:20px;
+padding:30px;
 border-radius:10px;
+width:300px;
 text-align:center;
 }
 
-.popup input{
-display:block;
-margin:10px auto;
+.popup-content input{
+width:100%;
 padding:10px;
-width:200px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 .close{
 cursor:pointer;
 float:right;
-}
-
-/* FOOTER */
-.footer{
-text-align:center;
-padding:20px;
-background:#0a3d91;
-color:white;
-}
-/* 🔥 SECTION SPACING IMPROVE */
-.section{
-    padding:80px 20px;
-}
-
-/* 🔥 BETTER CARD UI */
-.card{
-    border-radius:18px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px) scale(1.02);
-}
-
-/* 🔥 BUTTON UPGRADE */
-.btn{
-    background: linear-gradient(45deg,#0a3d91,#1e90ff);
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-/* 🔥 POPUP PREMIUM */
-.popup-content{
-    width:350px;
-    border-radius:15px;
-    padding:25px;
-    animation: popupAnim 0.4s ease;
-}
-
-@keyframes popupAnim{
-    from{
-        transform:translateY(-50px) scale(0.8);
-        opacity:0;
-    }
-    to{
-        transform:translateY(0) scale(1);
-        opacity:1;
-    }
-}
-
-/* INPUT IMPROVE */
-.popup-content input{
-    width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ddd;
-}
-
-/* CLOSE BTN */
-.close{
-    position:absolute;
-    right:15px;
-    top:10px;
-    font-size:18px;
-}
-
-/* 🔥 HERO IMPROVE */
-.hero{
-    padding:120px 20px;
-}
-
-/* 🔥 TRUST BADGES IMPROVE */
-.trust-badges span{
-    font-size:13px;
-    padding:6px 12px;
-}
-/* 🔥 GLASS EFFECT UPGRADE */
-.section{
-    padding:90px 20px;
-}
-
-/* HERO GRADIENT */
-.hero{
-    background: linear-gradient(135deg,#e3f2ff,#ffffff);
-}
-
-/* BUTTON PREMIUM */
-.btn{
-    background: linear-gradient(45deg,#0a3d91,#1e90ff);
-    box-shadow:0 8px 25px rgba(0,0,0,0.2);
-}
-
-.btn:hover{
-    transform:translateY(-4px) scale(1.05);
-}
-
-/* CARD PREMIUM */
-.card{
-    border-radius:18px;
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* POPUP PREMIUM */
-.popup{
-    backdrop-filter: blur(8px);
-}
-
-.popup-content{
-    width:360px;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.3);
-    animation: popSmooth 0.4s ease;
-}
-
-@keyframes popSmooth{
-    from{
-        transform:scale(0.7);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-
-/* INPUT PREMIUM */
-.popup-content input{
-    border-radius:10px;
-    border:1px solid #ddd;
-}
-
-/* TRUST BADGE */
-.trust-badges span{
-    font-size:13px;
-    padding:7px 14px;
-}
-
-/* COUNTER CARD */
-.counter-box{
-    background:linear-gradient(135deg,#ffffff,#f1f7ff);
-    border-radius:15px;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp{
-    font-size:24px;
-    padding:18px;
-}
-
-/* FOUNDER CARD */
-.founder-card{
-    border-radius:20px;
-    padding:40px;
+font-size:18px;
 }
