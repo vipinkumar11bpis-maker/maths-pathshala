@@ -1,198 +1,116 @@
-/* 🔵 GLOBAL */
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to right, #f5f9ff, #eaf3ff);
-    scroll-behavior: smooth;
+body{
+margin:0;
+font-family:Montserrat;
+background:#f5f9ff;
 }
 
-/* 🔥 NAVBAR */
-.navbar {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    z-index: 1000;
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+padding:15px 30px;
+background:white;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
 }
 
-.navbar a:hover {
-    color: #0a3d91;
+.navbar a{
+margin:0 10px;
+text-decoration:none;
+color:#333;
 }
 
-/* 🔥 HERO */
-.hero {
-    text-align: center;
-    padding: 120px 20px;
-    background: linear-gradient(135deg, #e3f2ff, #ffffff);
+/* HERO */
+.hero{
+text-align:center;
+padding:100px 20px;
 }
 
-.hero h1 {
-    font-size: 44px;
-    color: #0a3d91;
+.hero h1{
+color:#0a3d91;
 }
 
-.hero-sub{
-    margin-top:10px;
-    color:#444;
+/* BUTTON */
+.btn{
+padding:10px 20px;
+background:#0a3d91;
+color:white;
+border-radius:20px;
+text-decoration:none;
+display:inline-block;
+margin:10px;
 }
 
-/* 🔘 BUTTONS */
-.btn {
-    padding: 12px 25px;
-    background: linear-gradient(45deg,#0a3d91,#1e90ff);
-    color: white;
-    margin: 10px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-.outline {
-    background: white;
-    color: #0a3d91;
-    border: 2px solid #0a3d91;
-}
-
-.glow {
-    box-shadow: 0 0 20px #0a3d91;
-}
-
-/* 📦 SECTION */
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* 📚 CARDS */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    width: 240px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: 0.4s;
-}
-
-.card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* 📊 COUNTER */
+/* COUNTER */
 .counter-section{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    margin-top:30px;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:30px;
 }
 
 .counter-box{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+background:white;
+padding:20px;
+border-radius:10px;
 }
 
-.counter-box h2{
-    font-size:38px;
-    color:#0a3d91;
+/* CARDS */
+.cards{
+display:flex;
+justify-content:center;
+gap:20px;
 }
 
-/* 👨‍🏫 FOUNDER */
-.founder-img {
-    width: 110px;
-    height: 110px;
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
 }
 
-/* 📞 FORM */
-form{
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(10px);
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+/* FOUNDER */
+.founder-img{
+width:100px;
+border-radius:50%;
+display:block;
+margin:auto;
 }
 
-form input, form select{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
-}
-
-/* 💬 WHATSAPP */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 22px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-/* 🔥 POPUP */
+/* POPUP */
 .popup{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
 }
 
 .popup-content{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    width:320px;
-    text-align:center;
-    animation: zoomIn 0.4s ease;
+background:white;
+padding:20px;
+border-radius:10px;
+text-align:center;
 }
 
-@keyframes zoomIn{
-    from{transform:scale(0.5); opacity:0;}
-    to{transform:scale(1); opacity:1;}
+.popup input{
+display:block;
+margin:10px auto;
+padding:10px;
+width:200px;
 }
 
-/* 🗓 SCHEDULE */
-.schedule-table {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.close{
+cursor:pointer;
+float:right;
 }
 
-.day:hover {
-    transform: scale(1.05);
-}
-
-/* 📱 MOBILE */
-@media(max-width:768px){
-    .navbar{
-        flex-direction:column;
-    }
+/* FOOTER */
+.footer{
+text-align:center;
+padding:20px;
+background:#0a3d91;
+color:white;
 }
