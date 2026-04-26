@@ -1,56 +1,71 @@
-// COUNTER FIX (only when visible)
-let counters = document.querySelectorAll(".count");
+// 🔥 COUNTER (runs once only)
+let started = false;
 
-let startCounter = () => {
-counters.forEach(counter => {
+window.addEventListener("scroll", () => {
+let section = document.querySelector(".counter-section");
+
+if(!started && section.getBoundingClientRect().top < window.innerHeight){
+started = true;
+
+document.querySelectorAll(".count").forEach(counter => {
+let target = +counter.dataset.target;
+let count = 0;
+
 let update = () => {
-let target = +counter.getAttribute("data-target");
-let count = +counter.innerText;
-
-let inc = target / 80;
+count += target / 80;
 
 if(count < target){
-counter.innerText = Math.ceil(count + inc);
-setTimeout(update,20);
+counter.innerText = Math.ceil(count);
+requestAnimationFrame(update);
 }else{
 counter.innerText = target;
 }
-}
+};
+
 update();
 });
 }
-
-// trigger when scroll
-window.addEventListener("scroll", () => {
-let section = document.querySelector(".counter-section");
-if(section.getBoundingClientRect().top < window.innerHeight){
-startCounter();
-}
 });
 
-/* POPUP */
+// 🔥 POPUP CONTROL
 function openPopup(){
-document.getElementById("popupForm").style.display="flex";
+document.getElementById("popupForm").style.display = "flex";
 }
 
 function closePopup(){
-document.getElementById("popupForm").style.display="none";
+document.getElementById("popupForm").style.display = "none";
 }
 
-// auto open after 5 sec
-setTimeout(openPopup,5000);
+// auto open (smart delay)
+setTimeout(() => {
+openPopup();
+}, 6000);
 
-// auto close after 12 sec
-setTimeout(closePopup,17000);
+// auto close
+setTimeout(() => {
+closePopup();
+}, 18000);
 
-// WhatsApp
+// 🔥 WHATSAPP MAIN FORM
+function sendToWhatsApp() {
+let name = document.getElementById("name").value;
+let studentClass = document.getElementById("class").value;
+let course = document.getElementById("course").value;
+let phone = document.getElementById("phone").value;
+
+let message = `New Enquiry:%0AName: ${name}%0AClass: ${studentClass}%0ACourse: ${course}%0APhone: ${phone}`;
+
+window.open(`https://wa.me/919506054813?text=${message}`, "_blank");
+}
+
+// 🔥 POPUP FORM
 function sendPopup(){
 let name = document.getElementById("pname").value;
 let studentClass = document.getElementById("pclass").value;
 let phone = document.getElementById("pphone").value;
 
-let msg = `New Enquiry:%0AName: ${name}%0AClass: ${studentClass}%0APhone: ${phone}`;
+let msg = `New Student:%0AName: ${name}%0AClass: ${studentClass}%0APhone: ${phone}`;
 
-window.open(`https://wa.me/919506054813?text=${msg}`);
+window.open(`https://wa.me/919506054813?text=${msg}`, "_blank");
 closePopup();
 }
