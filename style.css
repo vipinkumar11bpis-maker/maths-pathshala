@@ -297,3 +297,25 @@ td, th {
 .card a:hover {
     text-decoration: underline;
 }
+.book-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    background: #0a3d91;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.book-btn:hover {
+    background: #062c6f;
+}
+
+.download {
+    background: green;
+}
+
+.download:hover {
+    background: darkgreen;
+}
