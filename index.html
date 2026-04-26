@@ -3,439 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maths Pathshala</title>
+<title>Maths Pathshala | Premium Learning Platform</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Montserrat', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
 }
 
 body{
-    background:#f7faff;
-    color:#222;
+background:#f4f7ff;
+color:#111;
 }
 
 /* NAVBAR */
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 25px;
-    background:linear-gradient(90deg,#0d47a1,#1976d2);
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+z-index:1000;
 }
 
 .navbar h2{
-    font-size:20px;
+color:#0d47a1;
+font-weight:700;
 }
 
 .navbar a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-    font-weight:500;
+margin:0 10px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
 }
 
 .navbar a:hover{
-    opacity:0.8;
+color:#0d47a1;
 }
 
 /* HERO */
 .hero{
-    text-align:center;
-    padding:80px 20px;
-    background:linear-gradient(to right,#e3f2fd,#ffffff);
+margin-top:100px;
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#0d47a1,#1976d2);
+color:white;
 }
 
 .hero h1{
-    font-size:34px;
-    color:#0d47a1;
-    margin-bottom:10px;
-    letter-spacing:1px;
+font-size:40px;
+font-weight:700;
 }
 
-.hero-sub{
-    color:#555;
-    margin-bottom:25px;
-    font-size:14px;
+.hero p{
+margin-top:15px;
+opacity:0.9;
 }
 
-.trust-badges{
-    margin-bottom:25px;
-}
-
-.trust-badges span{
-    display:inline-block;
-    background:#e3f2fd;
-    padding:8px 12px;
-    margin:5px;
-    border-radius:20px;
-    font-size:12px;
-}
-
-/* BUTTONS */
 .btn{
-    display:inline-block;
-    padding:10px 18px;
-    margin:5px;
-    border-radius:8px;
-    background:#1976d2;
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:0.3s;
+display:inline-block;
+margin-top:20px;
+padding:12px 20px;
+background:white;
+color:#0d47a1;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
 .btn:hover{
-    background:#0d47a1;
+transform:scale(1.05);
 }
 
-.btn.outline{
-    background:transparent;
-    border:2px solid #1976d2;
-    color:#1976d2;
-}
-
-.btn.glow{
-    box-shadow:0 0 10px rgba(25,118,210,0.4);
-}
-
-/* SECTION COMMON */
+/* SECTION */
 .section{
-    padding:60px 20px;
-    text-align:center;
+padding:60px 10%;
 }
 
 .section h2{
-    font-size:26px;
-    color:#0d47a1;
-    margin-bottom:30px;
-}
-
-/* COUNTER */
-.counter-section{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.counter-box{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    width:160px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.08);
-}
-
-.counter-box h2{
-    color:#1976d2;
-}
-
-/* WHY */
-.why-box{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-top:20px;
-}
-
-.why-box div{
-    background:white;
-    padding:18px;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.06);
-    font-size:14px;
+text-align:center;
+margin-bottom:40px;
+color:#0d47a1;
+font-size:28px;
 }
 
 /* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-    gap:20px;
-    padding:10px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:14px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    text-align:left;
-    transition:0.3s;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 .card h3{
-    color:#0d47a1;
-    margin-bottom:8px;
+color:#0d47a1;
+margin-bottom:10px;
 }
 
-.card ul{
-    margin-top:10px;
-    padding-left:18px;
-}
-
-/* TAG */
 .tag{
-    display:inline-block;
-    font-size:12px;
-    padding:4px 10px;
-    background:#e3f2fd;
-    border-radius:15px;
-    margin:5px 3px;
+font-size:12px;
+background:#e3f2fd;
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+margin-bottom:10px;
 }
 
-.tag.red{
-    background:#ffebee;
+/* DASHBOARD CTA */
+.cta{
+text-align:center;
+background:#0d47a1;
+color:white;
+padding:60px 20px;
+border-radius:20px;
 }
 
-/* FOUNDER */
-.founder-section{
-    text-align:center;
-}
-
-.founder-card{
-    background:white;
-    max-width:600px;
-    margin:auto;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-
-.founder-img{
-    width:120px;
-    border-radius:50%;
-    margin-bottom:10px;
-}
-
-.desc{
-    font-size:14px;
-    color:#444;
-    margin-top:10px;
-    line-height:1.5;
-}
-
-/* SCHEDULE */
-.schedule-table{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
-    gap:10px;
-}
-
-.day{
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.06);
-    font-size:13px;
-}
-
-/* FORM */
-form{
-    max-width:400px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-input,select,button{
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
+.cta a{
+margin-top:20px;
+display:inline-block;
+background:white;
+color:#0d47a1;
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
 }
 
 /* FOOTER */
 .footer{
-    background:#0d47a1;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:30px;
+text-align:center;
+padding:40px;
+background:#111;
+color:white;
+margin-top:50px;
 }
 
-/* WHATSAPP */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    font-size:20px;
-    text-decoration:none;
+@media(max-width:768px){
+.hero h1{font-size:28px;}
+.navbar{padding:15px 20px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <div class="navbar">
 <h2>Maths Pathshala</h2>
 <div>
-<a href="index.html">Home</a>
-<a href="courses.html">Courses</a>
-<a href="books.html">Books</a>
-    <a href="dashboard.html">Dashboard</a>
-<a href="founders.html">Founder</a>
-<a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#about">About</a>
+<a href="dashboard.html">Dashboard</a>
 </div>
 </div>
 
 <!-- HERO -->
-<section class="hero">
-<h1>BUILDING STRONG MATHEMATICS FOUNDATION</h1>
-<p class="hero-sub">Concept Based Teaching | 90%+ Results | Trusted by Students</p>
-
-<div class="trust-badges">
-<span>🎯 300+ Students</span>
-<span>📊 90%+ Results</span>
-<span>👨‍🏫 4+ Years Experience</span>
-<span>🏫 Ex PW SME</span>
-</div>
-
-<a href="courses.html" class="btn">COURSES</a>
-<a href="books.html" class="btn outline">BOOKS</a>
-<a href="#" class="btn glow">JOIN NOW</a>
-</section>
-
-<!-- COUNTER -->
-<section class="section counter-section">
-<div class="counter-box">
-<h2>300+</h2>
-<p>Students</p>
-</div>
-
-<div class="counter-box">
-<h2>90%+</h2>
-<p>Results</p>
-</div>
-
-<div class="counter-box">
-<h2>4+</h2>
-<p>Years Experience</p>
-</div>
-</section>
-
-<!-- WHY -->
-<section class="section">
-<h2>Why Choose Us</h2>
-<div class="why-box">
-<div>✔ Concept Based Teaching</div>
-<div>✔ Small Batch Attention</div>
-<div>✔ Regular Tests & DPP</div>
-<div>✔ Personal Doubt Support</div>
-</div>
+<section class="hero" id="home">
+<h1>BUILD STRONG MATHEMATICS FOUNDATION</h1>
+<p>Concept Based Learning | Personal Attention | Result Oriented Teaching</p>
+<a href="dashboard.html" class="btn">Go to Student Dashboard</a>
 </section>
 
 <!-- COURSES -->
-<section class="section">
+<section class="section" id="courses">
 <h2>Our Courses</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-<h3>Foundation Batch</h3>
-<span class="tag">Class 9-10</span>
-<span class="tag red">Limited Seats</span>
-<p>₹1000 Maths / ₹1800 Maths + Science</p>
-
-<ul>
-<li>Strong Concept Building</li>
-<li>Regular Tests & Analysis</li>
-<li>DPP Practice</li>
-<li>Doubt Clearing Sessions</li>
-</ul>
+<span class="tag">Class 8-10</span>
+<h3>Foundation Maths</h3>
+<p>Step-by-step concept building with practice sheets and tests.</p>
 </div>
 
 <div class="card">
-<h3>Boards Booster</h3>
 <span class="tag">Class 11-12</span>
-<p>₹1000</p>
+<h3>Boards Booster</h3>
+<p>NCERT focused teaching with board exam strategy and PYQs.</p>
+</div>
 
-<ul>
-<li>Board Exam Focus</li>
-<li>Concept Clarity</li>
-<li>Practice Sheets</li>
-<li>Result Oriented Strategy</li>
-</ul>
+<div class="card">
+<span class="tag">Advanced</span>
+<h3>Competitive Maths</h3>
+<p>For JEE / CUET foundation level problem solving.</p>
 </div>
 
 </div>
 </section>
 
-<!-- FOUNDER -->
-<section class="section founder-section">
-<h2>Founder</h2>
+<!-- ABOUT -->
+<section class="section" id="about">
+<h2>Why Choose Us?</h2>
 
-<div class="founder-card">
-<img src="sir.jpg.jpeg" class="founder-img">
-
-<h3>Vipin Kumar</h3>
-<p class="tag">MSc Mathematics | Ex PW SME | 4+ Years Experience</p>
-
-<p class="desc">
-Vipin Kumar is the founder of Maths Pathshala and a passionate Mathematics educator.
-He has taught Class 8 to 12 students with a focus on concept clarity and strong fundamentals.
-Former SME at Physics Wallah.
-</p>
+<div class="grid">
+<div class="card"><h3>Concept Clarity</h3><p>No rote learning, only understanding.</p></div>
+<div class="card"><h3>Regular Tests</h3><p>Weekly assessments for performance tracking.</p></div>
+<div class="card"><h3>Doubt Support</h3><p>Personal doubt solving sessions.</p></div>
 </div>
 </section>
 
-<!-- SCHEDULE -->
+<!-- CTA -->
 <section class="section">
-<h2>Class Schedule</h2>
-
-<div class="schedule-table">
-<div class="day">Mon<br>4-6 (9-10)<br>6-7 (11-12)</div>
-<div class="day">Tue<br>Same</div>
-<div class="day">Wed<br>Same</div>
-<div class="day">Thu<br>Same</div>
-<div class="day">Fri<br>Same</div>
-<div class="day">Sat<br>Same</div>
-<div class="day">Sun<br>OFF</div>
+<div class="cta">
+<h2>Join Student Dashboard</h2>
+<p>Track your progress, classes and tests in one place</p>
+<a href="dashboard.html">Open Dashboard</a>
 </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-<h2>Enroll Now</h2>
-
-<form>
-<input type="text" placeholder="Student Name">
-<input type="text" placeholder="Class">
-<select>
-<option>Foundation</option>
-<option>Boards Booster</option>
-</select>
-<input type="text" placeholder="Phone">
-<button type="button">Submit</button>
-</form>
 </section>
 
 <!-- FOOTER -->
 <div class="footer">
 <h3>Maths Pathshala</h3>
 <p>Kalyanpur, Kanpur</p>
-<p>📞 9506054813 | 📧 mathspathshala.k12@gmail.com</p>
+<p>Contact: 9506054813</p>
 </div>
-
-<a href="https://wa.me/919506054813" class="whatsapp">💬</a>
 
 </body>
 </html>
