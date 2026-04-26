@@ -319,3 +319,55 @@ td, th {
 .download:hover {
     background: darkgreen;
 }
+
+/* COUNTER */
+.counter-section{
+display:flex;
+justify-content:center;
+gap:40px;
+text-align:center;
+}
+
+.counter-box h2{
+font-size:40px;
+color:#0a3d91;
+}
+
+/* POPUP */
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.popup-content{
+background:white;
+padding:30px;
+border-radius:10px;
+text-align:center;
+width:300px;
+}
+
+.popup-content input{
+width:100%;
+margin:10px 0;
+padding:10px;
+}
+
+.close{
+cursor:pointer;
+color:red;
+float:right;
+}
+
+/* TESTIMONIAL */
+.card p{
+font-style:italic;
+}
